@@ -1,0 +1,181 @@
+@use "../globalvar.scss" as vars;
+
+.pricing {
+	background-color: vars.$pricing-background;
+	box-shadow: 0 10px 25px vars.$toggle-bg;
+	border-radius: 1em;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The slider */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: vars.$slider-bg;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 22px;
+	width: 22px;
+	left: 6px;
+	bottom: 6px;
+	background-color: white;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(22px);
+	-ms-transform: translateX(22px);
+	transform: translateX(22px);
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+.paymentswitch {
+	display: grid;
+	width: 100%;
+	grid-template-columns: 1fr 60px 1fr;
+	align-items: center;
+	gap: 1em;
+	justify-items: end;
+	color: vars.$text-color;
+	.discount {
+		font-size: small;
+		border-radius: 1em;
+		color: vars.$discount-txt;
+		background-color: vars.$discount-bg;
+		padding: 0.25em 0.5em;
+	}
+}
+
+.top {
+	padding: 3em;
+	.pricesection {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1em 0;
+		letter-spacing: 2px;
+		.pageviews {
+			text-transform: uppercase;
+			color: vars.$text-color;
+		}
+		.price {
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			font-size: 4rem;
+			.per {
+				font-size: 1rem;
+				color: vars.$text-color;
+			}
+		}
+	}
+
+	input[type="range"] {
+		width: 100%;
+		margin-block: 2em 4em;
+		-webkit-appearance: none;
+		appearance: none;
+		background: transparent;
+		cursor: pointer;
+		&::-webkit-slider-runnable-track {
+			background-color: vars.$slider-bg;
+			height: 8px;
+			border-radius: 100vmax;
+		}
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			margin-top: calc((4 - 25) * 1px);
+			width: 50px;
+			height: 50px;
+			border: 0;
+			background-color: vars.$slider-bg;
+			border-radius: 999vh;
+			background-image: url("../assets/images/icon-slider.svg");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: 2em;
+			cursor: pointer;
+		}
+		// firefox
+		&::-moz-range-progress {
+			background-color: vars.$slider-bg;
+			height: 8px;
+			border-radius: 999vmax;
+		}
+
+		&::-moz-range-thumb {
+			width: 50px;
+			height: 50px;
+			border: 0;
+			border-radius: 999vh;
+			background-color: vars.$slider-bg;
+			background-image: url("../assets/images/icon-slider.svg");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: 2em;
+			cursor: pointer;
+		}
+
+		&::-moz-range-track {
+			background-color: vars.$empty-slider;
+			height: 8px;
+			border-radius: 999vmax;
+		}
+	}
+}
+
+.bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 3em;
+
+	ul {
+		list-style-image: url("../assets/images/icon-check.svg");
+		color: vars.$text-color;
+		padding-left: 1em;
+	}
+
+	.starttrial {
+		background-color: vars.$cta-bg;
+		color: white;
+		padding: 0.75em 3em;
+		border-radius: 999vh;
+	}
+}

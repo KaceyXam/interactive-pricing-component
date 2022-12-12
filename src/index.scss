@@ -1,14 +1,13 @@
 @use "./globalvar.scss" as vars;
 
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
 
 :root {
-	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-	font-size: 24px;
+	font-family: "Manrope", sans-serif;
+	font-size: 15px;
 	font-weight: 700;
 
-	color: vars.$very-dark-cyan;
-	background-color: vars.$light-grey-cyan;
+	color: vars.$cta-bg;
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -43,4 +42,22 @@ button,
 select {
 	font: inherit;
 }
+
+html,
+body {
+	height: 100%;
+}
 /* end css reset */
+
+#root {
+	min-height: 100vh;
+}
+
+body {
+	min-height: 100vh;
+	background-color: vars.$main-bg;
+	background-image: url("./assets/images/bg-pattern.svg");
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: 100% 50%;
+}
