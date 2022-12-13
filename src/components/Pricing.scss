@@ -117,7 +117,7 @@ input:checked + .slider:before {
 		background: transparent;
 		cursor: pointer;
 		&::-webkit-slider-runnable-track {
-			background-color: vars.$slider-bg;
+			background-color: vars.$full-slider;
 			height: 8px;
 			border-radius: 100vmax;
 		}
@@ -141,7 +141,7 @@ input:checked + .slider:before {
 		}
 		// firefox
 		&::-moz-range-progress {
-			background-color: vars.$slider-bg;
+			background-color: vars.$full-slider;
 			height: 8px;
 			border-radius: 999vmax;
 		}
@@ -184,9 +184,13 @@ input:checked + .slider:before {
 
 	.starttrial {
 		background-color: vars.$cta-bg;
-		color: white;
+		color: vars.$cta-txt;
 		padding: 0.75em 3em;
 		border-radius: 999vh;
+		transition: color 75ms ease-in-out;
+		&:hover {
+			color: white;
+		}
 	}
 }
 
