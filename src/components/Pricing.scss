@@ -4,6 +4,7 @@
 	background-color: vars.$pricing-background;
 	box-shadow: 0 10px 25px vars.$toggle-bg;
 	border-radius: 1em;
+	min-width: 660px;
 }
 
 .switch {
@@ -79,6 +80,9 @@ input:checked + .slider:before {
 		background-color: vars.$discount-bg;
 		padding: 0.25em 0.5em;
 	}
+	.yearly {
+		justify-self: start;
+	}
 }
 
 .top {
@@ -131,6 +135,9 @@ input:checked + .slider:before {
 			background-repeat: no-repeat;
 			background-size: 2em;
 			cursor: pointer;
+			&:hover {
+				box-shadow: 0 0px 25px -5px vars.$slider-bg;
+			}
 		}
 		// firefox
 		&::-moz-range-progress {
@@ -150,6 +157,9 @@ input:checked + .slider:before {
 			background-repeat: no-repeat;
 			background-size: 2em;
 			cursor: pointer;
+			&:hover {
+				box-shadow: 0 0px 25px -5px vars.$slider-bg;
+			}
 		}
 
 		&::-moz-range-track {
