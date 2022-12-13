@@ -189,3 +189,31 @@ input:checked + .slider:before {
 		border-radius: 999vh;
 	}
 }
+
+@media only screen and (max-width: 760px) {
+	.pricing {
+		margin-inline: 5%;
+		min-width: auto;
+	}
+	.top {
+		padding: 2em;
+		.pricesection {
+			flex-direction: column;
+			gap: 1em;
+			.price {
+				font-size: 3rem;
+			}
+		}
+	}
+
+	.bottom {
+		flex-direction: column;
+		gap: 2em;
+		ul {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 0.5em;
+		}
+	}
+}

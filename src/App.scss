@@ -10,6 +10,8 @@
 }
 
 .introsection {
+	display: flex;
+	flex-direction: column;
 	text-align: center;
 	padding: 4rem;
 	background-image: url("./assets/images/pattern-circles.svg");
@@ -20,5 +22,22 @@
 	}
 	p {
 		color: vars.$text-color;
+	}
+}
+
+@media only screen and (max-width: 760px) {
+	.app {
+		gap: 2em;
+	}
+
+	.introsection {
+		gap: 1em;
+		h1 {
+			font-size: 1.6rem;
+		}
+		p {
+			max-width: 220px;
+			margin-inline: auto;
+		}
 	}
 }

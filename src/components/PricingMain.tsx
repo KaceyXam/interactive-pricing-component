@@ -22,7 +22,7 @@ function Switch({ toggleFunc }: { toggleFunc: Function }) {
 				<span className="slider round"></span>
 			</label>
 			<label className="yearly">
-				Yearly Billing <span className="discount">25% discount</span>
+				Yearly Billing <span className="discount">25%</span>
 			</label>
 		</div>
 	);
